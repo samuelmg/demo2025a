@@ -52,7 +52,7 @@ class MensajeController extends Controller
      */
     public function edit(Mensaje $mensaje)
     {
-        //
+        return view('mensajes.edit-mensaje', compact('mensaje'));
     }
 
     /**
@@ -60,7 +60,12 @@ class MensajeController extends Controller
      */
     public function update(Request $request, Mensaje $mensaje)
     {
-        //
+        $mensaje->nombre = $request->nombre;
+        $mensaje->correo = $request->correo;
+        $mensaje->mensaje = $request->mensaje;
+        $mensaje->save();
+
+        return redirect()->route('mensajes.show', $mensaje);
     }
 
     /**

@@ -17,5 +17,7 @@
         Mensaje: <br>
         {{ $mensaje->mensaje }}
     </p>
+    <hr>
+    <a href="{{ route('mensajes.edit', $mensaje) }}">Editar</a>
 </body>
 </html>

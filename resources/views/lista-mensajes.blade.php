@@ -15,6 +15,7 @@
             <th>Nombre</th>
             <th>Correo</th>
             <th>Fecha</th>
+            <th>Acciones</th>
         </tr>
 
         @foreach ($mensajes as $mensaje)
@@ -25,6 +26,9 @@
                 <td>{{ $mensaje->nombre }}</td>
                 <td>{{ $mensaje->correo }}</td>
                 <td>{{ $mensaje->created_at }}</td>
+                <td>
+                    <a href="{{ route('mensajes.edit', $mensaje) }}">Editar</a>
+                </td>
             </tr>
         @endforeach
 
