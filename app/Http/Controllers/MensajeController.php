@@ -30,6 +30,12 @@ class MensajeController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required|min:3|max:255',
+            'correo' => ['required', 'email', 'max:255'],
+            'mensaje' => ['required', 'min:15']
+        ]);
+    
         $mensaje = new Mensaje();
         $mensaje->nombre = $request->nombre;
         $mensaje->correo = $request->correo;
@@ -60,6 +66,12 @@ class MensajeController extends Controller
      */
     public function update(Request $request, Mensaje $mensaje)
     {
+        $request->validate([
+            'nombre' => 'required|min:3|max:255',
+            'correo' => ['required', 'email', 'max:255'],
+            'mensaje' => ['required', 'min:15']
+        ]);
+
         $mensaje->nombre = $request->nombre;
         $mensaje->correo = $request->correo;
         $mensaje->mensaje = $request->mensaje;
