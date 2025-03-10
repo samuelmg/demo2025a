@@ -11,6 +11,7 @@
 
     <table border="1">
         <tr>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Correo</th>
             <th>Fecha</th>
@@ -18,6 +19,9 @@
 
         @foreach ($mensajes as $mensaje)
             <tr>
+                <td>
+                    <a href="{{ route('mensajes.show', $mensaje->id) }}">{{ $mensaje->id }}</a>
+                </td>
                 <td>{{ $mensaje->nombre }}</td>
                 <td>{{ $mensaje->correo }}</td>
                 <td>{{ $mensaje->created_at }}</td>
