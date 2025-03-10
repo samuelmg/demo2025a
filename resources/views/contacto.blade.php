@@ -7,7 +7,7 @@
     <title>Contacto</title>
 </head>
 <body>
-    <form action="/crear-contacto" method="POST">
+    <form action="/mensajes" method="POST">
         @csrf
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre">

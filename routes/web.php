@@ -12,9 +12,9 @@ Route::get('/inicio', function () {
     return view('landing');
 });
 
-Route::get('/mensajes', [MensajeController::class, 'index']);
-Route::get('/contacto', [MensajeController::class, 'create']);
-Route::post('/crear-contacto', [MensajeController::class, 'store']);
+// Route::get('/mensajes', [MensajeController::class, 'index']);
+// Route::get('/contacto', [MensajeController::class, 'create']);
+// Route::post('/crear-contacto', [MensajeController::class, 'store']);
 
-// Route::resource('mensajes', MensajeController::class);
+Route::resource('mensajes', MensajeController::class);
 
