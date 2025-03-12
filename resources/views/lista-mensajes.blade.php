@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Mensajes Recibidos</h1>
+    <h1>Listado de Mensajes</h1>
 
     <table border="1">
         <tr>
