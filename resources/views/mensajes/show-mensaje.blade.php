@@ -19,5 +19,12 @@
     </p>
     <hr>
     <a href="{{ route('mensajes.edit', $mensaje) }}">Editar</a>
+
+    <form action="{{ route('mensajes.destroy', $mensaje) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Eliminar</button>
+    </form>
+
 </body>
 </html>

@@ -85,6 +85,7 @@ class MensajeController extends Controller
      */
     public function destroy(Mensaje $mensaje)
     {
-        //
+        $mensaje->delete();
+        return redirect()->route('mensajes.index');
     }
 }
