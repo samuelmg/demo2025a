@@ -37,11 +37,14 @@ class MensajeController extends Controller
             'mensaje' => ['required', 'min:15']
         ]);
     
-        $mensaje = new Mensaje();
-        $mensaje->nombre = $request->nombre;
-        $mensaje->correo = $request->correo;
-        $mensaje->mensaje = $request->mensaje;
-        $mensaje->save();
+        // Forma manual de crear registro de mensaje
+        // $mensaje = new Mensaje();
+        // $mensaje->nombre = $request->nombre;
+        // $mensaje->correo = $request->correo;
+        // $mensaje->mensaje = $request->mensaje;
+        // $mensaje->save();
+
+        Mensaje::create($request->all());
 
         return redirect('/mensajes');
     }
@@ -73,10 +76,11 @@ class MensajeController extends Controller
             'mensaje' => ['required', 'min:15']
         ]);
 
-        $mensaje->nombre = $request->nombre;
-        $mensaje->correo = $request->correo;
-        $mensaje->mensaje = $request->mensaje;
-        $mensaje->save();
+        // $mensaje->nombre = $request->nombre;
+        // $mensaje->correo = $request->correo;
+        // $mensaje->mensaje = $request->mensaje;
+        // $mensaje->save();
+        $mensaje->update($request->all());
 
         return redirect()->route('mensajes.show', $mensaje);
     }
