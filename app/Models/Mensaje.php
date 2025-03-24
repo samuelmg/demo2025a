@@ -10,4 +10,9 @@ class Mensaje extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    public function respuestas()
+    {
+        return $this->hasMany(Respuesta::class);
+    }
 }
