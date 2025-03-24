@@ -13,7 +13,8 @@ class MensajeController extends Controller
     public function index()
     {
         return view('lista-mensajes', [
-            'mensajes' => Mensaje::all()
+            'mensajes' => Mensaje::all(),
+            'mensajesBorrados' => Mensaje::onlyTrashed()->get()
         ]);
     }
 

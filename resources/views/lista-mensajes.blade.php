@@ -34,5 +34,31 @@
 
     </table>
 
+
+    <h2>Mensajes borrados</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+        </tr>
+
+        @foreach ($mensajesBorrados as $mensaje)
+            <tr>
+                <td>
+                    <a href="{{ route('mensajes.show', $mensaje->id) }}">{{ $mensaje->id }}</a>
+                </td>
+                <td>{{ $mensaje->nombre }}</td>
+                <td>{{ $mensaje->correo }}</td>
+                <td>{{ $mensaje->created_at }}</td>
+                <td>
+                    <a href="{{ route('mensajes.edit', $mensaje) }}">Editar</a>
+                </td>
+            </tr>
+        @endforeach
+
+    </table>
 </body>
 </html>
