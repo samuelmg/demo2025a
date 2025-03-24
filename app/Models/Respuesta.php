@@ -10,6 +10,8 @@ class Respuesta extends Model
     /** @use HasFactory<\Database\Factories\RespuestaFactory> */
     use HasFactory;
 
+    protected $fillable = ['contenido'];
+
     public function mensaje()
     {
         return $this->belongsTo(Mensaje::class);

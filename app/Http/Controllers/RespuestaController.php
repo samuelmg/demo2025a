@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mensaje;
 use App\Models\Respuesta;
 use Illuminate\Http\Request;
 
@@ -35,8 +36,11 @@ class RespuestaController extends Controller
 
         $respuesta = new Respuesta();
         $respuesta->contenido = $request->contenido;
-        $respuesta->mensaje_id = $request->mensaje_id;
-        $respuesta->save();
+        // $respuesta->mensaje_id = $request->mensaje_id;
+        // $respuesta->save();
+
+        $mensaje = Mensaje::find($request->mensaje_id);
+        $mensaje->respuestas()->save($respuesta);
 
         return redirect()->route('mensajes.show', $respuesta->mensaje_id);
     }
